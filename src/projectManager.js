@@ -18,12 +18,10 @@ class Project {
   printTask() {
     this.task.forEach((task,index)=>{
         console.log(`task index: ${index}`);
-        for(let value of Object.values(task)){
-            console.log(`${value},index: ${Object.values(task).indexOf(value)}`);
-        }
-    })
+        console.log(Object.entries(task));
+        })
   }
-}
+};
 
 class ProjectList {
   constructor() {}
