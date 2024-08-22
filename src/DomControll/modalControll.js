@@ -1,5 +1,5 @@
 import { projectList } from "./../index";
-import displayTask from "../DomControll/displayTasks.js"
+import displayTask from "../DomControll/displayTasks.js";
 import displayTasks from "../DomControll/displayTasks.js";
 
 const projectDialog = document.querySelector(".project-dialog");
@@ -44,7 +44,7 @@ projectDialog.addEventListener("submit", (e) => {
 
   const project = document.querySelector("#projectInput").value;
 
-  if(!projectList.addProject(project)){
+  if (!projectList.addProject(project)) {
     return;
   }
 
@@ -52,14 +52,25 @@ projectDialog.addEventListener("submit", (e) => {
 
   const projectBtn = document.createElement("button");
   projectBtn.classList.add("projectTab");
+  projectBtn.id = project;
 
   projectBtn.textContent = project;
   projectListDiv.appendChild(projectBtn);
 
-  projectBtn.addEventListener('click',()=>displayTasks(projectList[project]));
+  projectBtn.addEventListener("click", () =>
+    displayTasks(projectList[project])
+  );
+  createTaskDisplayBtn();
 
   document.querySelector(".project-form").reset();
   projectDialog.close();
 });
+
+function createTaskDisplayBtn() {
+    debugger;
+  const projectTab = document.querySelector(".projectTab");
+  console.log(projectList[projectTab.id])
+    displayTasks(projectList[projectTab.id]);
+}
 
 export { projectDialog, taskDialog, addProjectBtn, addTaskBtn };

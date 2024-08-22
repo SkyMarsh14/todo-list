@@ -1,10 +1,11 @@
 export default function displayTasks(project) {
-  document.querySelector("main").innerHTML = "";
-
+  
   if(project.tasks.length===0){
     console.error("No task assinged to the project");
     return ;
   }
+  document.querySelector("main").innerHTML = "";
+  
     project.tasks.forEach((task) => {
     const container = document.createElement("div");
     const title = document.createElement("h1");
