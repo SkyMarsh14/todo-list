@@ -6,14 +6,14 @@ class Project {
   }
 
   addTask(title, description = "N/A", dueDate = null, priority = "normal") {
-    const tasks = {};
-    tasks.title = title;
-    tasks.description = description;
-    tasks.dueDate = dueDate;
-    tasks.priority = priority;
-    tasks.completion = false;
+    const task = {};
+    task.title = title;
+    task.description = description;
+    task.dueDate = dueDate;
+    task.priority = priority;
+    task.completion = false;
 
-    this.tasks.push(tasks);
+    this.tasks.push(task);
   }
   printTask() {
     this.tasks.forEach((task,index)=>{
@@ -29,11 +29,12 @@ class ProjectList {
   addProject(projectName) {
     if (this.hasOwnProperty(`${projectName}`)) {
       console.log(`Project conflict. Project: "${projectName}" already exists`);
-      return;
+      return false;
     }
 
     const project = new Project(projectName);
     projectList[projectName] = project;
+    return true;
   }
 
   removeProject(projectName) {

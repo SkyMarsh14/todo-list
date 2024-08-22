@@ -1,15 +1,20 @@
-import "./styles.css"
+import "./styles.css";
 import { Project, ProjectList } from "./projectManager.js";
-import displayInbox from "./tabs/inbox.js";
+import displayTasks from "./DomControll/displayTasks.js";
+import {projectDialog, taskDialog, addProjectBtn,addTaskBtn} from "./DomControll/modalControll.js"
 
-const projectList = new ProjectList;
+const projectList = new ProjectList();
 const inboxProject = new Project("default");
 projectList.inboxProject = inboxProject;
 
 inboxProject.addTask("study Japanese", "read 500 pages", "Aug 30th", "high");
-inboxProject.addTask("study Japanese", "read 500 pages", "Aug 30th", "high");
+inboxProject.addTask("Study English", "read 500 pages");
 
-inboxProject.printTask();
-displayInbox(inboxProject);
+document
+  .querySelector(".inbox")
+  .addEventListener("click", () => displayTasks(inboxProject));
+
+displayTasks(inboxProject);
+projectList.addProject("hello");
 
 export { projectList };
