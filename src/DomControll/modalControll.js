@@ -1,5 +1,4 @@
 import { projectList } from "./../index";
-import displayTask from "../DomControll/displayTasks.js";
 import displayTasks from "../DomControll/displayTasks.js";
 
 const projectDialog = document.querySelector(".project-dialog");
@@ -26,7 +25,7 @@ closeModalBtn.forEach((btn) => {
 
 taskDialog.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  debugger;
   const title = document.querySelector("#title").value;
   const description = document.querySelector("#description").value;
   const dueDate = document.querySelector("#dueDate").value;
@@ -49,13 +48,23 @@ projectDialog.addEventListener("submit", (e) => {
   }
 
   const projectListDiv = document.querySelector(".projects");
+  const btnContainer = document.createElement("div");
+
+  const addTaskBtn = document.createElement("button");
+  addTaskBtn.textContent = "Add Task Here";
 
   const projectBtn = document.createElement("button");
   projectBtn.classList.add("projectTab");
   projectBtn.id = project;
 
+  addTaskBtn.addEventListener("click", () => {
+    event.currentTarget.parentElement.setAttribute("deta-activeProject",true);
+    taskDialog.showModal();
+  });
+
   projectBtn.textContent = project;
-  projectListDiv.appendChild(projectBtn);
+  projectListDiv.appendChild(btnContainer);
+  btnContainer.append(projectBtn, addTaskBtn);
 
   projectBtn.addEventListener("click", () =>
     displayTasks(projectList[project])
@@ -66,11 +75,12 @@ projectDialog.addEventListener("submit", (e) => {
   projectDialog.close();
 });
 
+//add function to the created buttons to display tasks.
 function createTaskDisplayBtn() {
-    debugger;
   const projectTab = document.querySelector(".projectTab");
-  console.log(projectList[projectTab.id])
-    displayTasks(projectList[projectTab.id]);
+  projectTab.addEventListener("click", () =>
+    displayTasks(projectList[projectTab.id])
+  );
 }
 
 export { projectDialog, taskDialog, addProjectBtn, addTaskBtn };

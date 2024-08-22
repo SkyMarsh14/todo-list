@@ -30,7 +30,7 @@ class ProjectList {
     if (this.hasOwnProperty(`${projectName}`)) {
       console.log(`Project conflict. Project: "${projectName}" already exists`);
       return false;
-    }
+    }else if (projectName.length === 0) return false;
 
     const project = new Project(projectName);
     projectList[projectName] = project;
