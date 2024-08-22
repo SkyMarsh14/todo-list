@@ -1,5 +1,6 @@
 const main = document.querySelector('main');
 const noTasks = document.createElement('div');
+noTasks.classList.add("noTasksDiv");
 noTasks.textContent="No tasks in this project :(";
 
 export default function displayTasks(project) {

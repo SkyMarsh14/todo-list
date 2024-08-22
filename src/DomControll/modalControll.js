@@ -30,7 +30,6 @@ taskDialog.addEventListener("submit", (e) => {
   const dueDate = document.querySelector("#dueDate").value;
   const prio = document.querySelector("#prio").value;
   const selectedProject = document.querySelector('[data-active-project="true"]');
-  selectedProject;
   if (!selectedProject) {
     projectList.inboxProject.addTask(title, description, dueDate, prio);
   }else{
@@ -40,6 +39,7 @@ taskDialog.addEventListener("submit", (e) => {
   document.querySelector("#task-form").reset();
 
   taskDialog.close();
+  displayTasks(projectList[selectedProject.id]);
 });
 
 projectDialog.addEventListener("submit", (e) => {
@@ -74,7 +74,8 @@ projectDialog.addEventListener("submit", (e) => {
   projectBtn.textContent = project;
   projectListDiv.appendChild(btnContainer);
   btnContainer.append(projectBtn, addTaskBtn);
-
+  
+  console.log(projectList)
   projectBtn.addEventListener("click", () =>
     displayTasks(projectList[project])
   );
@@ -82,6 +83,7 @@ projectDialog.addEventListener("submit", (e) => {
 
   document.querySelector(".project-form").reset();
   projectDialog.close();
+  displayTasks(projectList[project]);
 });
 
 //add function to the created buttons to display tasks.
