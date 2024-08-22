@@ -2,21 +2,21 @@ import { projectList } from "./index";
 class Project {
   constructor(name) {
     this.name = name;
-    this.task = [];
+    this.tasks = [];
   }
 
   addTask(title, description = "N/A", dueDate = null, priority = "normal") {
-    const task = {};
-    task.title = title;
-    task.description = description;
-    task.dueDate = dueDate;
-    task.priority = priority;
-    task.completion = false;
+    const tasks = {};
+    tasks.title = title;
+    tasks.description = description;
+    tasks.dueDate = dueDate;
+    tasks.priority = priority;
+    tasks.completion = false;
 
-    this.task.push(task);
+    this.tasks.push(tasks);
   }
   printTask() {
-    this.task.forEach((task,index)=>{
+    this.tasks.forEach((task,index)=>{
         console.log(`task index: ${index}`);
         console.log(Object.entries(task));
         })
