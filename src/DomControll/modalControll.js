@@ -29,11 +29,13 @@ taskDialog.addEventListener("submit", (e) => {
   const description = document.querySelector("#description").value;
   const dueDate = document.querySelector("#dueDate").value;
   const prio = document.querySelector("#prio").value;
-  const selectedProject = document.querySelector('[data-active-project="true"]');
+  const selectedProject = document.querySelector(
+    '[data-active-project="true"]'
+  );
   if (!selectedProject) {
     projectList.inboxProject.addTask(title, description, dueDate, prio);
-  }else{
-    projectList[selectedProject.id].addTask(title,description,dueDate,prio);
+  } else {
+    projectList[selectedProject.id].addTask(title, description, dueDate, prio);
   }
 
   document.querySelector("#task-form").reset();
@@ -63,9 +65,11 @@ projectDialog.addEventListener("submit", (e) => {
 
   //add activeProject attribute to clicked project to associate project with its tasks
   addTaskBtn.addEventListener("click", () => {
-    const selectedProject = document.querySelector('[data-active-project="true"]');
-    if(selectedProject){
-        selectedProject.dataset.activeProject=false;
+      const selectedProject = document.querySelector(
+        '[data-active-project="true"]'
+      );
+    if (selectedProject) {
+      selectedProject.dataset.activeProject = false;
     }
     event.currentTarget.parentElement.setAttribute("data-active-project", true);
     taskDialog.showModal();
@@ -74,8 +78,8 @@ projectDialog.addEventListener("submit", (e) => {
   projectBtn.textContent = project;
   projectListDiv.appendChild(btnContainer);
   btnContainer.append(projectBtn, addTaskBtn);
-  
-  console.log(projectList)
+
+  console.log(projectList);
   projectBtn.addEventListener("click", () =>
     displayTasks(projectList[project])
   );
