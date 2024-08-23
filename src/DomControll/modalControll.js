@@ -12,6 +12,13 @@ addProjectBtn.addEventListener("click", () => {
 });
 
 addTaskBtn.addEventListener("click", () => {
+  const selectedProject = document.querySelector(
+    '[data-active-project="true"]'
+  );
+  if (selectedProject) {
+    selectedProject.dataset.activeProject = false;
+  }
+  event.currentTarget.parentElement.setAttribute("data-active-project", true);
   taskDialog.showModal();
 });
 
@@ -30,7 +37,9 @@ taskDialog.addEventListener("submit", (e) => {
   const dueDate = document.querySelector("#dueDate").value;
   const prio = document.querySelector("#prio").value;
   const selectedProject = document.querySelector(
+    
     '[data-active-project="true"]'
+  
   );
   if (!selectedProject) {
     projectList.inboxProject.addTask(title, description, dueDate, prio);
@@ -65,9 +74,9 @@ projectDialog.addEventListener("submit", (e) => {
 
   //add activeProject attribute to clicked project to associate project with its tasks
   addTaskBtn.addEventListener("click", () => {
-      const selectedProject = document.querySelector(
-        '[data-active-project="true"]'
-      );
+    const selectedProject = document.querySelector(
+      '[data-active-project="true"]'
+    );
     if (selectedProject) {
       selectedProject.dataset.activeProject = false;
     }
