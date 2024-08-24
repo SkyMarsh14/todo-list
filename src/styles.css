@@ -1,99 +1,127 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
     2. Remove default margin
   */
-  * {
-    margin: 0;
-  }
-  /*
+* {
+  margin: 0;
+}
+/*
     Typographic tweaks!
     3. Add accessible line-height
     4. Improve text rendering
   */
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  /*
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
     5. Improve media defaults
   */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
     6. Remove built-in form typography styles
   */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
     7. Avoid text overflows
   */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
     8. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
-  }
-
-  body{
-    display:grid;
-    grid-template-columns:1fr 4fr;
-    font-family: "Lato", sans-serif;
-  }
-
-  aside{
-    display:grid;
-    flex-direction: column;
-  }
-
-  .active{
-    color:purple;
-  }
-  dialog{
-    margin:auto;
-  }
-  dialog label{
-    display:block;
-  }
-  .buttonsContainer{
-    display:flex;
-    justify-content: space-between;
-  }
-
-.projectTab{
-  display:flex;
-  flex-direction:column;
+#root,
+#__next {
+  isolation: isolate;
 }
-.userInfo{
-  margin:8px;
-  display:flex;
+
+body {
+  display: flex;
+  font-family: "Lato", sans-serif;
+}
+
+aside {
+  display: grid;
+  flex-direction: column;
+}
+
+.active {
+  color: purple;
+}
+dialog {
+  margin: auto;
+}
+dialog label {
+  display: block;
+}
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectTab {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar {
+  width: 280px;
+  transition: 0.5s ease;
+}
+.userInfo {
+  margin: 8px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  height:50px;
+  height: 50px;
 }
-.userInfo>h1{
-  font-size:1.5em;
+.userInfo > h1 {
+  font-weight: 100;
+  font-size: 1.5em;
 }
-.sidebarBtn{
-  background:none;
-  border:none;
-  >svg{
-    width:40px;
-    height:40px;
+.sidebarBtn {
+  background: none;
+  border: none;
+  margin-top:10px;
+  > svg {
+    width: 40px;
+    height: 40px;
   }
 }
-.sidebarBtn:hover{
-  opacity:0.7;
+.sidebarBtn:hover {
+  opacity: 0.7;
   background-color: rgb(189, 201, 216);
   border-radius: 10px;
+}
+[data-collapse="true"] {
+  width: 0;
+  overflow: hidden;
+}
+[data-collapse="false"] .sidebarBtn{
+  transform:translateX(100px);
 }

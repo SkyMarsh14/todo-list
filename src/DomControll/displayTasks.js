@@ -1,12 +1,12 @@
-const main = document.querySelector('main');
+const content = document.querySelector('.content');
 const noTasks = document.createElement('div');
 noTasks.classList.add("noTasksDiv");
 noTasks.textContent="No tasks in this project :(";
 
 export default function displayTasks(project) {
-  main.innerHTML = "";
+  content.innerHTML = "";
   if(project.tasks.length===0){
-    main.append(noTasks);
+    content.appendChild(noTasks);
     return ;
   }
 
@@ -21,7 +21,7 @@ export default function displayTasks(project) {
     description.textContent = task.description;
     dueDate.textContent = task.dueDate;
     prio.textContent = task.priority;
-    document.querySelector("main").append(container);
+    content.append(container);
     container.append(title, description, dueDate, prio);
   });
 }
