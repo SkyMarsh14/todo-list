@@ -47,28 +47,13 @@
 
   body{
     display:grid;
-    grid-template-columns:1fr 5fr;
-    grid-template-rows: 10vh 1fr 5vh;
-  }
-  header{
-    display:flex;
-    justify-content: center;
-    grid-row:1/2;
-    grid-column:1/-1;
-    align-items: center;
+    grid-template-columns:1fr 4fr;
+    font-family: "Lato", sans-serif;
   }
 
   aside{
     display:grid;
     flex-direction: column;
-  }
-
-  footer{
-    grid-row:3/4;
-    grid-column:1/-1;
-    display:flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .active{
@@ -84,3 +69,31 @@
     display:flex;
     justify-content: space-between;
   }
+
+.projectTab{
+  display:flex;
+  flex-direction:column;
+}
+.userInfo{
+  margin:8px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height:50px;
+}
+.userInfo>h1{
+  font-size:1.5em;
+}
+.sidebarBtn{
+  background:none;
+  border:none;
+  >svg{
+    width:40px;
+    height:40px;
+  }
+}
+.sidebarBtn:hover{
+  opacity:0.7;
+  background-color: rgb(189, 201, 216);
+  border-radius: 10px;
+}
