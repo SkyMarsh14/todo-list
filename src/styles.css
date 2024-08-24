@@ -91,7 +91,8 @@ dialog label {
 }
 .sidebar {
   width: 280px;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
+  background-color:#cbd5e1;
 }
 .userInfo {
   margin: 8px;
@@ -122,6 +123,10 @@ dialog label {
   width: 0;
   overflow: hidden;
 }
-[data-collapse="false"] .sidebarBtn{
-  transform:translateX(100px);
+main{
+  flex:1;
+}
+.content{
+  display:grid;
+  gap:4ch;
 }
