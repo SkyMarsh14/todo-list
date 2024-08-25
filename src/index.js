@@ -2,7 +2,12 @@ import "./styles.css";
 import { Project, ProjectList } from "./projectManager.js";
 import displayTasks from "./DomControll/displayTasks.js";
 import {projectDialog, taskDialog, addProjectBtn,addTaskBtn} from "./DomControll/modalControll.js"
-import {sidebarBtn} from "./DomControll/sidebarControll.js"
+import { differenceInCalendarDays } from "date-fns";
+
+const result = differenceInCalendarDays(
+  new Date(2024,8,30), new Date(2024,8,20) 
+);
+console.log(result);
 
 const projectList = new ProjectList();
 const inboxProject = new Project("default");
