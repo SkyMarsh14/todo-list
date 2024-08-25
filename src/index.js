@@ -2,7 +2,7 @@ import "./styles.css";
 import { Project, ProjectList } from "./projectManager.js";
 import displayTasks from "./DomControll/displayTasks.js";
 import {projectDialog, taskDialog, addProjectBtn,addTaskBtn} from "./DomControll/modalControll.js"
-
+import { sidebarBtn } from "./DomControll/sidebarControll.js";
 
 
 const projectList = new ProjectList();
