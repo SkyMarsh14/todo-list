@@ -85,14 +85,27 @@ dialog label {
   justify-content: space-between;
 }
 
-.projectTab {
+.projectTab,.projects{
   display: flex;
   flex-direction: column;
+  >button{
+    background: none;
+    border:none;
+    text-align: left;
+    padding-left:10px;
+    margin:7px 10px;
+    border-radius:5px;
+  }
+  >button:hover{
+    opacity: 0.7;
+    background-color: #96e6da;
+  }
 }
 .sidebar {
   width: 280px;
   transition: 0.3s ease;
-  background-color:#cbd5e1;
+  background-color:#c1e7e1ec;
+  height:100vh;
 }
 .userInfo {
   margin: 8px;
@@ -104,6 +117,7 @@ dialog label {
 .userInfo > h1 {
   font-weight: 100;
   font-size: 1.5em;
+  text-wrap:nowrap;
 }
 .sidebarBtn {
   background: none;
