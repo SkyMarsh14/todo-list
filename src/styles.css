@@ -159,7 +159,31 @@ form{
 }
 main{
   margin:20px;  
+  flex:1;
 }
 .content{
   display:grid;
+}
+
+[data-priority="high"]{
+  box-shadow: 10px 5px  red; 
+}
+[data-priority="normal"]{
+  box-shadow: 10px 5px rgba(8, 184, 117, 0.377); 
+}
+[data-priority="low"]{
+  box-shadow: 10px 5px green; 
+}
+.task{
+  border:black solid 1px;
+  padding:3ch 2em;
+  display:flex;
+  width:50vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.content{
+  display:grid;
+  gap:20px;
+  justify-content: center;
 }

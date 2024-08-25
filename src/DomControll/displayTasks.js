@@ -14,10 +14,10 @@ export default function displayTasks(project) {
 
   project.tasks.forEach((task) => {
     const container = document.createElement("div");
-    const title = document.createElement("h1");
+    container.classList.add("task");
+    const title = document.createElement("h2");
     const description = document.createElement("div");
     const dueDate = document.createElement("div");
-    const prio = document.createElement("div");
 
     const due = new Date(task.dueDate);
     const today = new Date();
@@ -28,11 +28,12 @@ export default function displayTasks(project) {
   }else {
     dueDate.textContent = `Due in ${daysLeft} days`;
   }
-  
+  //Add dataset for prio to style container according to the priority given.
+  container.dataset.priority=task.priority;
+
     title.textContent = task.title;
-    description.textContent = task.description;
-    prio.textContent = task.priority;
+    description.textContent = `Description: ${task.description}`;
     content.append(container);
-    container.append(title, description, dueDate, prio);
+    container.append(title, description, dueDate);
   });
 }
