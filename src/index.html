@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Manager</title>
-</head>
-<body>
+  </head>
+  <body>
     <aside>
-        <nav class="sidebar" data-collapse="false";>
-            <div class="userInfo">
-                <h1>Task Manager</h1>
-            </div>
-            <div class="projectTab" id="inboxProject" data-active-project="true" >
-                <button class="addTask">Add Task</button>
-                <button class="inbox">Inbox</button>
-            </div>
-            <div class="projects">
-                <button class="upcoming">Upcoming</button>
-                <button class="add-project">Add Project</button>
-            </div>
-        </nav>
+      <nav class="sidebar" data-collapse="false" ;>
+        <div class="userInfo">
+          <h1>Task Manager</h1>
+        </div>
+        <div class="projectTab" id="inboxProject" data-active-project="true">
+          <button class="addTask">Add Task</button>
+          <button class="inbox">Inbox</button>
+        </div>
+        <div class="projects">
+          <button class="upcoming">Upcoming</button>
+          <button class="add-project">Add Project</button>
+        </div>
+      </nav>
     </aside>
     <main>
-        <button class="sidebarBtn">
-            <svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000" class="bi bi-layout-sidebar">
-                <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2V2z"/>
-              </svg>
-        </button>
-        <div class="content"></div>
+      <button class="sidebarBtn">
+        <svg
+          width="800px"
+          height="800px"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+          class="bi bi-layout-sidebar"
+        >
+          <path
+            d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2V2z"
+          />
+        </svg>
+      </button>
+      <div class="content"></div>
     </main>
     <dialog class="project-dialog">
-        <form action="" class="project-form">
-            <input type="text" id="projectInput">
+      <form action="" class="project-form">
+        <label for="projectInput">Project name</label>
+        <input type="text" id="projectInput" />
+        <div class="formBtn">
             <button type="submit">Add Project</button>
             <button class="closeModalBtn">Cancel</button>
-        </form>
+        </div>
+      </form>
     </dialog>
     <dialog class="task-dialog">
-        <form action="" id = "task-form">
-            <label for="title">Title</label>
-            <input type="text" id ="title" name = "title" required>
+      <form action="" id="task-form">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required />
 
-            <label for="description">Description</label>
-            <input type="text" id ="description">
+        <label for="description">Description</label>
+        <input type="text" id="description" />
 
-            <label for="dueDate">Due date</label>
-            <input type="text" id ="dueDate">
+        <label for="dueDate">Due date</label>
+        <input type="text" id="dueDate" />
+        
+        <div>Priority of the Task</div>
+        <div class="radio">
+          <input type="radio" id="high" name="priority" value="high" />
+          <label for="high">High</label>
+        </div>
 
-            <label for="prio">Priority</label>
-            <input type="text" id ="prio">
+        <div class="radio">
+          <input type="radio" id="normal" name="priority" value="normal" checked />
+          <label for="normal">Normal</label>
+        </div>
 
-            <div class="buttonsContainer">
-                <button type = "submit">Add Task</button>
-                <button class="closeModalBtn">Cancel</button>
-            </div>
-        </form>
+        <div class="radio"> 
+          <input type="radio" id="low" name="priority" value="low" />
+          <label for="low">Low</label>
+        </div>
+
+        <div class="buttonsContainer">
+          <button type="submit">Add Task</button>
+          <button class="closeModalBtn">Cancel</button>
+        </div>
+      </form>
     </dialog>
-</body>
+  </body>
 </html>

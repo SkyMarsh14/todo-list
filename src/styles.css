@@ -76,9 +76,18 @@ aside {
 }
 dialog {
   margin: auto;
+  border-radius: 10px;
+  border-color:rgba(225, 215, 250, 0.925);
 }
-dialog label {
+dialog>label {
   display: block;
+  margin-top:20px;
+}
+form{
+  display:flex;
+  flex-direction: column;
+  width:30vw;
+  gap:1vh;
 }
 .buttonsContainer {
   display: flex;
@@ -98,13 +107,24 @@ dialog label {
   }
   >button:hover{
     opacity: 0.7;
-    background-color: #96e6da;
+    background-color: #d8d8d857;
   }
+}
+.project-form{
+  width:30vw;
+}
+.radio{
+  margin-left:20px;
+}
+.formBtn{
+  display:flex;
+  justify-content: space-between;
+  padding-top:20px;
 }
 .sidebar {
   width: 280px;
   transition: 0.3s ease;
-  background-color:#c1e7e1ec;
+  background-color:#f5f5f5;
   height:100vh;
 }
 .userInfo {
@@ -138,9 +158,8 @@ dialog label {
   overflow: hidden;
 }
 main{
-  flex:1;
+  margin:20px;  
 }
 .content{
   display:grid;
-  gap:4ch;
 }

@@ -35,7 +35,7 @@ taskDialog.addEventListener("submit", (e) => {
   const title = document.querySelector("#title").value;
   const description = document.querySelector("#description").value;
   const dueDate = document.querySelector("#dueDate").value;
-  const prio = document.querySelector("#prio").value;
+  const prio = document.querySelector('input[name="priority"]:checked').value;
   const selectedProject = document.querySelector(
     
     '[data-active-project="true"]'
