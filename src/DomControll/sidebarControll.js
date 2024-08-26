@@ -2,7 +2,6 @@ const sidebar = document.querySelector(".sidebar");
 const sidebarBtn = document.querySelector(".sidebarBtn");
 
 sidebarBtn.addEventListener("click", () => {
-  debugger;
   const collapse = sidebar.dataset.collapse;
   if (collapse==="true") sidebar.dataset.collapse = "false";
   else sidebar.dataset.collapse = "true";

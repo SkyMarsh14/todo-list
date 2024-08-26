@@ -110,6 +110,9 @@ form{
     background-color: #d8d8d857;
   }
 }
+.projectTab{
+  flex-direction: row;
+}
 .project-form{
   width:30vw;
 }
@@ -128,19 +131,24 @@ form{
   height:100vh;
 }
 .userInfo {
-  margin: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
 }
-.userInfo > h1 {
+.userInfo > h1, .projects>h1 {
   font-weight: 100;
   font-size: 1.5em;
   text-wrap:nowrap;
 }
+aside{
+  padding-left:10px;
+  background-color:#f5f5f5;
+
+}
 .sidebarBtn {
   background: none;
+  
   border: none;
   margin-top:10px;
   > svg {
