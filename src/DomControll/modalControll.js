@@ -66,8 +66,8 @@ projectDialog.addEventListener("submit", (e) => {
   const btnContainer = document.createElement("div");
 
   const addTaskBtn = document.createElement("button");
+  addTaskBtn.classList.add('projectTaskBtn');
   addTaskBtn.textContent = "Add Task Here";
-
   const projectBtn = document.createElement("button");
   btnContainer.classList.add("projectTab");
   btnContainer.id = project;
