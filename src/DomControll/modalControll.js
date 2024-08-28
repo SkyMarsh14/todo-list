@@ -1,6 +1,6 @@
 import { projectList } from "./../index";
 import displayTasks from "../DomControll/displayTasks.js";
-import editIcon from "../icon/pen-square-svgrepo-com.svg";
+import displayProject from "./displayProjects.js"
 
 const projectDialog = document.querySelector(".project-dialog");
 const taskDialog = document.querySelector(".task-dialog");
@@ -38,9 +38,7 @@ taskDialog.addEventListener("submit", (e) => {
   const dueDate = document.querySelector("#dueDate").value;
   const prio = document.querySelector('input[name="priority"]:checked').value;
   const selectedProject = document.querySelector(
-    
     '[data-active-project="true"]'
-  
   );
   if (!selectedProject) {
     projectList.inboxProject.addTask(title, description, dueDate, prio);
@@ -58,56 +56,22 @@ projectDialog.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const project = document.querySelector("#projectInput").value;
-
+  
+  //check project will not duplicate
   if (!projectList.addProject(project)) {
     return;
   }
-
-  const projectListDiv = document.querySelector(".projects");
-  const btnContainer = document.createElement("div");
-
-  const addTaskBtn = document.createElement("button");
-  addTaskBtn.classList.add('projectTaskBtn');
-  const img = document.createElement('img');
-  img.src = editIcon;
-  const projectBtn = document.createElement("button");
-  projectBtn.classList.add('customProjectBtn')
-  btnContainer.classList.add("projectTab");
-  btnContainer.id = project;
-
-  //add activeProject attribute to clicked project to associate project with its tasks
-  addTaskBtn.addEventListener("click", () => {
-    const selectedProject = document.querySelector(
-      '[data-active-project="true"]'
-    );
-    if (selectedProject) {
-      selectedProject.dataset.activeProject = false;
-    }
-    event.currentTarget.parentElement.setAttribute("data-active-project", true);
-    taskDialog.showModal();
-  });
-
-  projectBtn.textContent = project;
-  projectListDiv.appendChild(btnContainer);
-  btnContainer.append(projectBtn, addTaskBtn);
-  addTaskBtn.append(img);
-
-  projectBtn.addEventListener("click", () =>
-    displayTasks(projectList[project])
-  );
-  createTaskDisplayBtn();
-
+  displayProject(project);
+  
   document.querySelector(".project-form").reset();
   projectDialog.close();
   displayTasks(projectList[project]);
 });
 
-//add function to the created buttons to display tasks.
-function createTaskDisplayBtn() {
-  const projectTab = document.querySelector(".projectTab");
-  projectTab.addEventListener("click", () =>
-    displayTasks(projectList[projectTab.id])
-  );
-}
 
-export { projectDialog, taskDialog, addProjectBtn, addTaskBtn,createTaskDisplayBtn };
+export {
+  projectDialog,
+  taskDialog,
+  addProjectBtn,
+  addTaskBtn
+};

@@ -12,13 +12,13 @@ export default function displayTasks(project) {
     return;
   }
 
-  project.tasks.forEach((task) => {
+  project.tasks.forEach((task,index) => {
     const container = document.createElement("div");
     container.classList.add("task");
     const title = document.createElement("h2");
     const description = document.createElement("div");
     const dueDate = document.createElement("div");
-
+    container.classList.add(index)
     const due = new Date(task.dueDate);
     const today = new Date();
     const daysLeft = differenceInCalendarDays(due, today);

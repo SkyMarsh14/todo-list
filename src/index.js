@@ -3,6 +3,7 @@ import { Project, ProjectList } from "./projectManager.js";
 import displayTasks from "./DomControll/displayTasks.js";
 import {projectDialog, taskDialog, addProjectBtn,addTaskBtn} from "./DomControll/modalControll.js"
 import { sidebarBtn } from "./DomControll/sidebarControll.js";
+import displayProjects from "./DomControll/displayProjects.js";
 
 
 const projectList = new ProjectList();
@@ -17,6 +18,7 @@ document
   .addEventListener("click", () => displayTasks(inboxProject));
 
 displayTasks(inboxProject);
-projectList.addProject("hello");
+projectList.addProject("home");
+console.log(hello)
 
 export { projectList };
