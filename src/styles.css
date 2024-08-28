@@ -195,3 +195,13 @@ main{
   gap:20px;
   justify-content: center;
 }
+.projectTaskBtn{
+  height:1.5em;
+  >img{
+    height: 100%;
+  }
+  flex-grow:0;
+}
+.customProjectBtn{
+  flex:1;
+}

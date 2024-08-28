@@ -1,5 +1,6 @@
 import { projectList } from "./../index";
 import displayTasks from "../DomControll/displayTasks.js";
+import editIcon from "../icon/pen-square-svgrepo-com.svg";
 
 const projectDialog = document.querySelector(".project-dialog");
 const taskDialog = document.querySelector(".task-dialog");
@@ -67,8 +68,10 @@ projectDialog.addEventListener("submit", (e) => {
 
   const addTaskBtn = document.createElement("button");
   addTaskBtn.classList.add('projectTaskBtn');
-  addTaskBtn.textContent = "Add Task Here";
+  const img = document.createElement('img');
+  img.src = editIcon;
   const projectBtn = document.createElement("button");
+  projectBtn.classList.add('customProjectBtn')
   btnContainer.classList.add("projectTab");
   btnContainer.id = project;
 
@@ -87,8 +90,8 @@ projectDialog.addEventListener("submit", (e) => {
   projectBtn.textContent = project;
   projectListDiv.appendChild(btnContainer);
   btnContainer.append(projectBtn, addTaskBtn);
+  addTaskBtn.append(img);
 
-  console.log(projectList);
   projectBtn.addEventListener("click", () =>
     displayTasks(projectList[project])
   );
@@ -107,4 +110,4 @@ function createTaskDisplayBtn() {
   );
 }
 
-export { projectDialog, taskDialog, addProjectBtn, addTaskBtn };
+export { projectDialog, taskDialog, addProjectBtn, addTaskBtn,createTaskDisplayBtn };
