@@ -1,6 +1,6 @@
 import { projectList } from "./../index";
 import displayTasks from "../DomControll/displayTasks.js";
-import displayProject from "./displayProjects.js"
+import {displayProject} from "./displayProjects.js"
 
 const projectDialog = document.querySelector(".project-dialog");
 const taskDialog = document.querySelector(".task-dialog");

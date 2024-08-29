@@ -3,7 +3,7 @@ import displayTasks from "./displayTasks";
 import editIcon from "../icon/pen-square-svgrepo-com.svg";
 
 
-function displayProjects() {
+export function getCustomProjects() {
   const projects = [];
   Object.keys(projectList).forEach((key) => {
     projects.push(projectList[key]);
@@ -12,7 +12,7 @@ function displayProjects() {
   return projects;
 }
 
-export default function displayProject(project) {
+export function displayProject(project) {
     const taskDialog=document.querySelector('.task-dialog');
   const projectListDiv = document.querySelector(".projects");
   const btnContainer = document.createElement("div");
