@@ -1,6 +1,7 @@
 import { projectList } from "..";
 import displayTasks from "./displayTasks";
-import editIcon from "../icon/pen-square-svgrepo-com.svg";
+import editSvg from "../icon/pen-square-svgrepo-com.svg";
+import trashcanSvg from "../icon/trashcan.svg";
 
 
 export function getCustomProjects() {
@@ -18,8 +19,12 @@ export function displayProject(project) {
   const btnContainer = document.createElement("div");
   const addTaskBtn = document.createElement("button");
   addTaskBtn.classList.add("projectTaskBtn");
-  const img = document.createElement("img");
-  img.src = editIcon;
+  const noteIcon = document.createElement("img");
+  const deleteProjectBtn=document.createElement('button');
+  const trashcanIcon=document.createElement('img');
+  deleteProjectBtn.classList.add('deleteProjectBtn');
+  trashcanIcon.src=trashcanSvg;
+  noteIcon.src = editSvg;
   const projectBtn = document.createElement("button");
   projectBtn.classList.add("customProjectBtn");
   btnContainer.classList.add("projectTab");
@@ -39,8 +44,9 @@ export function displayProject(project) {
 
   projectBtn.textContent = project;
   projectListDiv.appendChild(btnContainer);
-  btnContainer.append(projectBtn, addTaskBtn);
-  addTaskBtn.append(img);
+  btnContainer.append(projectBtn, addTaskBtn,deleteProjectBtn);
+  addTaskBtn.append(noteIcon);
+  deleteProjectBtn.append(trashcanIcon);
 
   projectBtn.addEventListener("click", () =>
     displayTasks(projectList[project])

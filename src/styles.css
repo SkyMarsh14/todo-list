@@ -94,7 +94,7 @@ form{
   justify-content: space-between;
 }
 
-.projectTab,.projects{
+.projects{
   display: flex;
   flex-direction: column;
   >button{
@@ -195,13 +195,26 @@ main{
   gap:20px;
   justify-content: center;
 }
-.projectTaskBtn{
+.projectTab{
   height:1.5em;
-  >img{
-    height: 100%;
+  display:grid;
+  grid-template-columns: 5fr 1fr 1fr;
+  padding-left:10px;
+  margin:7px 10px;
+  >button{
+    border:none;
+    background:none;
+    height:1.5em;
+    >img{
+      display:block;
+      height: 100%;
+    }
   }
-  flex-grow:0;
+  button:hover{
+    opacity: 0.7;
+    background-color: #d8d8d857;
+  }
 }
 .customProjectBtn{
-  flex:1;
+  text-align: start;
 }
