@@ -1,1 +1,87 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Task Manager</title><script defer="defer" src="main.js"></script></head><body><aside><nav class="sidebar" data-collapse="false" ;><div class="userInfo"><h1>Task Manager</h1></div><div class="projects" id="inboxProject" data-active-project="true"><button class="addTask">Add Task</button> <button class="inbox">Inbox</button><h1>Custom Projects</h1></div><div class="projects"><button class="add-project">Add Project</button></div><div class="clearStorage"><button class="clearStorageBtn" onclick="localStorage.clear()">Clear Local Storage</button></div></nav></aside><main><button class="sidebarBtn"><svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000" class="bi bi-layout-sidebar"><path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2V2z"/></svg></button><div class="content"></div></main><dialog class="project-dialog"><form action="" class="project-form"><label for="projectInput">Project name</label> <input id="projectInput"/><div class="formBtn"><button type="submit">Add Project</button> <button class="closeModalBtn">Cancel</button></div></form></dialog><dialog class="task-dialog"><form action="" id="task-form"><label for="title">Title</label> <input id="title" name="title" required/> <label for="description">Description</label> <input id="description"/> <label for="dueDate">Due date</label> <input type="date" id="dueDate"/><div>Priority of the Task</div><div class="radio"><input type="radio" id="high" name="priority" value="high"/> <label for="high">High</label></div><div class="radio"><input type="radio" id="normal" name="priority" value="normal" checked="checked"/> <label for="normal">Normal</label></div><div class="radio"><input type="radio" id="low" name="priority" value="low"/> <label for="low">Low</label></div><div class="buttonsContainer"><button type="submit">Add Task</button> <button class="closeModalBtn">Cancel</button></div></form></dialog></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Task Manager</title>
+    <script defer="defer" src="main.js"></script>
+  </head>
+  <body>
+    <aside>
+      <nav class="sidebar" data-collapse="false" ;>
+        <div class="userInfo"><h1>Task Manager</h1></div>
+        <div class="projects" id="inboxProject" data-active-project="true">
+          <button class="addTask">Add Task</button>
+          <button class="inbox">Inbox</button>
+          <h1>Custom Projects</h1>
+        </div>
+        <div class="projects">
+          <button class="add-project">Add Project</button>
+        </div>
+        <div class="clearStorage">
+          <button class="clearStorageBtn" onclick="localStorage.clear()">
+            Clear Local Storage
+          </button>
+        </div>
+      </nav>
+    </aside>
+    <main>
+      <button class="sidebarBtn">
+        <svg
+          width="800px"
+          height="800px"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+          class="bi bi-layout-sidebar"
+        >
+          <path
+            d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm5-1v12h9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5zM4 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2V2z"
+          />
+        </svg>
+      </button>
+      <div class="content"></div>
+    </main>
+    <dialog class="project-dialog">
+      <form action="" class="project-form">
+        <label for="projectInput">Project name</label>
+        <input id="projectInput" />
+        <div class="formBtn">
+          <button type="submit">Add Project</button>
+          <button class="closeModalBtn">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog class="task-dialog">
+      <form action="" id="task-form">
+        <label for="title">Title</label>
+        <input id="title" name="title" required />
+        <label for="description">Description</label> <input id="description" />
+        <label for="dueDate">Due date</label> <input type="date" id="dueDate" />
+        <div>Priority of the Task</div>
+        <div class="radio">
+          <input type="radio" id="high" name="priority" value="high" />
+          <label for="high">High</label>
+        </div>
+        <div class="radio">
+          <input
+            type="radio"
+            id="normal"
+            name="priority"
+            value="normal"
+            checked="checked"
+          />
+          <label for="normal">Normal</label>
+        </div>
+        <div class="radio">
+          <input type="radio" id="low" name="priority" value="low" />
+          <label for="low">Low</label>
+        </div>
+        <div class="buttonsContainer">
+          <button type="submit">Add Task</button>
+          <button class="closeModalBtn">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

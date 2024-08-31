@@ -2,7 +2,6 @@ import { differenceInCalendarDays } from "date-fns";
 import trashcanSvg from "../icon/trashcan.svg";
 import { saveLocal } from "../localStorage";
 
-
 const content = document.querySelector(".content");
 const noTasks = document.createElement("div");
 noTasks.classList.add("noTasksDiv");
@@ -18,13 +17,13 @@ export default function displayTasks(project) {
   project.tasks.forEach((task, index) => {
     const container = document.createElement("div");
     container.classList.add("task");
-    container.dataset.taskIndex=index;
+    container.dataset.taskIndex = index;
     const title = document.createElement("h2");
     const description = document.createElement("div");
     const dueDate = document.createElement("div");
-    const deleteTaskBtn=document.createElement('button');
-    const trashcanImg=document.createElement('img');
-    trashcanImg.src=trashcanSvg;
+    const deleteTaskBtn = document.createElement("button");
+    const trashcanImg = document.createElement("img");
+    trashcanImg.src = trashcanSvg;
     const due = new Date(task.dueDate);
     const today = new Date();
     const daysLeft = differenceInCalendarDays(due, today);
@@ -35,11 +34,11 @@ export default function displayTasks(project) {
     } else {
       dueDate.textContent = `Due in ${daysLeft} days`;
     }
-    deleteTaskBtn.addEventListener("click",()=>{
+    deleteTaskBtn.addEventListener("click", () => {
       container.remove();
-      project.tasks.splice(`${index}`,1);
+      project.tasks.splice(`${index}`, 1);
       saveLocal();
-    })
+    });
     //Add dataset for prio to style container according to the priority given.
     container.dataset.priority = task.priority;
 
@@ -48,7 +47,7 @@ export default function displayTasks(project) {
       ? `Description: ${task.description}`
       : null;
     content.append(container);
-    container.append(title, description, dueDate,deleteTaskBtn);
+    container.append(title, description, dueDate, deleteTaskBtn);
     deleteTaskBtn.append(trashcanImg);
   });
 }

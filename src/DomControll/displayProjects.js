@@ -6,7 +6,7 @@ import { loadLocalProject } from "../localStorage";
 
 export function getCustomProjects() {
   const projects = [];
-  Object.assign(projectList,loadLocalProject());
+  Object.assign(projectList, loadLocalProject());
   Object.keys(projectList).forEach((key) => {
     projects.push(projectList[key]);
   });
@@ -49,13 +49,12 @@ export function displayProject(project) {
   addTaskBtn.append(noteIcon);
   deleteProjectBtn.append(trashcanIcon);
 
-  projectBtn.addEventListener("click", () =>{
+  projectBtn.addEventListener("click", () => {
     displayTasks(projectList[project]);
-  }
-  );
-  
-  deleteProjectBtn.addEventListener("click",()=>{
+  });
+
+  deleteProjectBtn.addEventListener("click", () => {
     projectList.removeProject(project);
     btnContainer.remove();
-})
+  });
 }
