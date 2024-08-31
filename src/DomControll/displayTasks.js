@@ -1,5 +1,6 @@
 import { differenceInCalendarDays } from "date-fns";
 import trashcanSvg from "../icon/trashcan.svg";
+import { saveLocal } from "../localStorage";
 
 
 const content = document.querySelector(".content");
@@ -37,6 +38,7 @@ export default function displayTasks(project) {
     deleteTaskBtn.addEventListener("click",()=>{
       container.remove();
       project.tasks.splice(`${index}`,1);
+      saveLocal();
     })
     //Add dataset for prio to style container according to the priority given.
     container.dataset.priority = task.priority;

@@ -21,10 +21,14 @@ projectList.inboxProject = inboxProject;
 
 document
   .querySelector(".inbox")
-  .addEventListener("click", () => displayTasks(inboxProject));
+  .addEventListener("click", () => {
+    displayTasks(projectList.inboxProject);
+})
 
   document.addEventListener('DOMContentLoaded',()=>{
     getCustomProjects().forEach((project) => displayProject(project.name));
+    Object.assign(projectList,loadLocalProject());
+    displayTasks(projectList.inboxProject);
   });
 
 export { projectList };
