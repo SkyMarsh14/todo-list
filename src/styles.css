@@ -77,58 +77,58 @@ aside {
 dialog {
   margin: auto;
   border-radius: 10px;
-  border-color:rgba(225, 215, 250, 0.925);
+  border-color: rgba(225, 215, 250, 0.925);
 }
-dialog>label {
+dialog > label {
   display: block;
-  margin-top:20px;
+  margin-top: 20px;
 }
-form{
-  display:flex;
+form {
+  display: flex;
   flex-direction: column;
-  width:30vw;
-  gap:1vh;
+  width: 30vw;
+  gap: 1vh;
 }
 .buttonsContainer {
   display: flex;
   justify-content: space-between;
 }
 
-.projects{
+.projects {
   display: flex;
   flex-direction: column;
-  >button{
+  > button {
     background: none;
-    border:none;
+    border: none;
     text-align: left;
-    padding-left:10px;
-    margin:7px 10px;
-    border-radius:5px;
+    padding-left: 10px;
+    margin: 7px 10px;
+    border-radius: 5px;
   }
-  >button:hover{
+  > button:hover {
     opacity: 0.7;
     background-color: #d8d8d857;
   }
 }
-.projectTab{
+.projectTab {
   flex-direction: row;
 }
-.project-form{
-  width:30vw;
+.project-form {
+  width: 30vw;
 }
-.radio{
-  margin-left:20px;
+.radio {
+  margin-left: 20px;
 }
-.formBtn{
-  display:flex;
+.formBtn {
+  display: flex;
   justify-content: space-between;
-  padding-top:20px;
+  padding-top: 20px;
 }
 .sidebar {
   width: 280px;
   transition: 0.3s ease;
-  background-color:#f5f5f5;
-  height:100vh;
+  background-color: #f5f5f5;
+  height: 100vh;
 }
 .userInfo {
   display: flex;
@@ -136,21 +136,21 @@ form{
   justify-content: space-between;
   height: 50px;
 }
-.userInfo > h1, .projects>h1 {
+.userInfo > h1,
+.projects > h1 {
   font-weight: 100;
   font-size: 1.5em;
-  text-wrap:nowrap;
+  text-wrap: nowrap;
 }
-aside{
-  padding-left:10px;
-  background-color:#f5f5f5;
-
+aside {
+  padding-left: 10px;
+  background-color: #f5f5f5;
 }
 .sidebarBtn {
   background: none;
-  
+
   border: none;
-  margin-top:10px;
+  margin-top: 10px;
   > svg {
     width: 40px;
     height: 40px;
@@ -165,56 +165,56 @@ aside{
   width: 0;
   overflow: hidden;
 }
-main{
-  margin:20px;  
-  flex:1;
+main {
+  margin: 20px;
+  flex: 1;
 }
-.content{
-  display:grid;
+.content {
+  display: grid;
 }
 
-[data-priority="high"]{
-  box-shadow: 10px 5px  red; 
+[data-priority="high"] {
+  box-shadow: 10px 5px red;
 }
-[data-priority="normal"]{
-  box-shadow: 10px 5px rgba(8, 184, 117, 0.377); 
+[data-priority="normal"] {
+  box-shadow: 10px 5px rgba(8, 184, 117, 0.377);
 }
-[data-priority="low"]{
-  box-shadow: 10px 5px green; 
+[data-priority="low"] {
+  box-shadow: 10px 5px green;
 }
-.task{
-  border:black solid 1px;
-  padding:3ch 2em;
-  display:flex;
-  width:50vw;
+.task {
+  border: black solid 1px;
+  padding: 3ch 2em;
+  display: flex;
+  width: 50vw;
   justify-content: space-between;
   align-items: center;
 }
-.content{
-  display:grid;
-  gap:20px;
+.content {
+  display: grid;
+  gap: 20px;
   justify-content: center;
 }
-.projectTab{
-  height:1.5em;
-  display:grid;
+.projectTab {
+  height: 1.5em;
+  display: grid;
   grid-template-columns: 5fr 1fr 1fr;
-  padding-left:10px;
-  margin:7px 10px;
-  >button{
-    border:none;
-    background:none;
-    height:1.5em;
-    >img{
-      display:block;
+  padding-left: 10px;
+  margin: 7px 10px;
+  > button {
+    border: none;
+    background: none;
+    height: 1.5em;
+    > img {
+      display: block;
       height: 100%;
     }
   }
-  button:hover{
+  button:hover {
     opacity: 0.7;
     background-color: #d8d8d857;
   }
 }
-.customProjectBtn{
+.customProjectBtn {
   text-align: start;
 }

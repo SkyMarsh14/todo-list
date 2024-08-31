@@ -3,7 +3,6 @@ import displayTasks from "./displayTasks";
 import editSvg from "../icon/pen-square-svgrepo-com.svg";
 import trashcanSvg from "../icon/trashcan.svg";
 
-
 export function getCustomProjects() {
   const projects = [];
   Object.keys(projectList).forEach((key) => {
@@ -14,16 +13,16 @@ export function getCustomProjects() {
 }
 
 export function displayProject(project) {
-    const taskDialog=document.querySelector('.task-dialog');
+  const taskDialog = document.querySelector(".task-dialog");
   const projectListDiv = document.querySelector(".projects");
   const btnContainer = document.createElement("div");
   const addTaskBtn = document.createElement("button");
   addTaskBtn.classList.add("projectTaskBtn");
   const noteIcon = document.createElement("img");
-  const deleteProjectBtn=document.createElement('button');
-  const trashcanIcon=document.createElement('img');
-  deleteProjectBtn.classList.add('deleteProjectBtn');
-  trashcanIcon.src=trashcanSvg;
+  const deleteProjectBtn = document.createElement("button");
+  const trashcanIcon = document.createElement("img");
+  deleteProjectBtn.classList.add("deleteProjectBtn");
+  trashcanIcon.src = trashcanSvg;
   noteIcon.src = editSvg;
   const projectBtn = document.createElement("button");
   projectBtn.classList.add("customProjectBtn");
@@ -33,7 +32,7 @@ export function displayProject(project) {
   //add activeProject attribute to clicked project to associate project with its tasks
   addTaskBtn.addEventListener("click", () => {
     const selectedProject = document.querySelector(
-      '[data-active-project="true"]'
+      '[data-active-project="true"]',
     );
     if (selectedProject) {
       selectedProject.dataset.activeProject = false;
@@ -44,15 +43,17 @@ export function displayProject(project) {
 
   projectBtn.textContent = project;
   projectListDiv.appendChild(btnContainer);
-  btnContainer.append(projectBtn, addTaskBtn,deleteProjectBtn);
+  btnContainer.append(projectBtn, addTaskBtn, deleteProjectBtn);
   addTaskBtn.append(noteIcon);
   deleteProjectBtn.append(trashcanIcon);
 
   projectBtn.addEventListener("click", () =>
     displayTasks(projectList[project])
   );
-  const projectTab = document.querySelector(".projectTab");
-  projectTab.addEventListener("click", () =>
-    displayTasks(projectList[projectTab.id])
-  );
+  
+  deleteProjectBtn.addEventListener("click",()=>{
+    projectList.removeProject(project);
+    btnContainer.remove();
+
+})
 }

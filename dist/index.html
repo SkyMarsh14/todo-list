@@ -1,1 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task Manager</title><script defer="defer" src="main.js"></script></head><body><header>Task Manager</header><aside><nav><button class="addTask">Add Task</button> <button class="inbox">Inbox</button> <button class="upcoming">Upcoming</button></nav><nav><div class="projects"><h1>Projects</h1></div><button class="add-project">Add Project</button><ul class="project-list"></ul></nav></aside><main></main><footer>This is footer</footer><dialog class="project-dialog"><form action="" class="project-form"><input id="projectInput"> <button type="submit">Add Project</button> <button class="closeModalBtn">Cancel</button></form></dialog><dialog class="task-dialog"><form action="" id="task-form"><label for="title">Title</label> <input id="title" name="title" required> <label for="description">Description</label> <input id="description"> <label for="dueDate">Due date</label> <input id="dueDate"> <label for="prio">Priority</label> <input id="prio"><div class="buttonsContainer"><button type="submit">Add Task</button> <button class="closeModalBtn">Cancel</button></div></form></dialog></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Task Manager</title>
+    <script defer="defer" src="main.js"></script>
+  </head>
+  <body>
+    <header>Task Manager</header>
+    <aside>
+      <nav>
+        <button class="addTask">Add Task</button>
+        <button class="inbox">Inbox</button>
+        <button class="upcoming">Upcoming</button>
+      </nav>
+      <nav>
+        <div class="projects"><h1>Projects</h1></div>
+        <button class="add-project">Add Project</button>
+        <ul class="project-list"></ul>
+      </nav>
+    </aside>
+    <main></main>
+    <footer>This is footer</footer>
+    <dialog class="project-dialog">
+      <form action="" class="project-form">
+        <input id="projectInput" /> <button type="submit">Add Project</button>
+        <button class="closeModalBtn">Cancel</button>
+      </form>
+    </dialog>
+    <dialog class="task-dialog">
+      <form action="" id="task-form">
+        <label for="title">Title</label>
+        <input id="title" name="title" required />
+        <label for="description">Description</label> <input id="description" />
+        <label for="dueDate">Due date</label> <input id="dueDate" />
+        <label for="prio">Priority</label> <input id="prio" />
+        <div class="buttonsContainer">
+          <button type="submit">Add Task</button>
+          <button class="closeModalBtn">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

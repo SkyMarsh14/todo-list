@@ -1,6 +1,6 @@
 import { projectList } from "./../index";
 import displayTasks from "../DomControll/displayTasks.js";
-import {displayProject} from "./displayProjects.js"
+import { displayProject } from "./displayProjects.js";
 
 const projectDialog = document.querySelector(".project-dialog");
 const taskDialog = document.querySelector(".task-dialog");
@@ -14,7 +14,7 @@ addProjectBtn.addEventListener("click", () => {
 
 addTaskBtn.addEventListener("click", () => {
   const selectedProject = document.querySelector(
-    '[data-active-project="true"]'
+    '[data-active-project="true"]',
   );
   if (selectedProject) {
     selectedProject.dataset.activeProject = false;
@@ -38,7 +38,7 @@ taskDialog.addEventListener("submit", (e) => {
   const dueDate = document.querySelector("#dueDate").value;
   const prio = document.querySelector('input[name="priority"]:checked').value;
   const selectedProject = document.querySelector(
-    '[data-active-project="true"]'
+    '[data-active-project="true"]',
   );
   if (!selectedProject) {
     projectList.inboxProject.addTask(title, description, dueDate, prio);
@@ -56,22 +56,16 @@ projectDialog.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const project = document.querySelector("#projectInput").value;
-  
+
   //check project will not duplicate
   if (!projectList.addProject(project)) {
     return;
   }
   displayProject(project);
-  
+
   document.querySelector(".project-form").reset();
   projectDialog.close();
   displayTasks(projectList[project]);
 });
 
-
-export {
-  projectDialog,
-  taskDialog,
-  addProjectBtn,
-  addTaskBtn
-};
+export { projectDialog, taskDialog, addProjectBtn, addTaskBtn };

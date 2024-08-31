@@ -16,12 +16,12 @@ class Project {
     this.tasks.push(task);
   }
   printTask() {
-    this.tasks.forEach((task,index)=>{
-        console.log(`task index: ${index}`);
-        console.log(Object.entries(task));
-        })
+    this.tasks.forEach((task, index) => {
+      console.log(`task index: ${index}`);
+      console.log(Object.entries(task));
+    });
   }
-};
+}
 
 class ProjectList {
   constructor() {}
@@ -30,7 +30,7 @@ class ProjectList {
     if (this.hasOwnProperty(`${projectName}`)) {
       console.log(`Project conflict. Project: "${projectName}" already exists`);
       return false;
-    }else if (projectName.length === 0) return false;
+    } else if (projectName.length === 0) return false;
 
     const project = new Project(projectName);
     projectList[projectName] = project;

@@ -2,7 +2,7 @@ export default function displayTasks(project) {
   document.querySelector("main").innerHTML = "";
   debugger;
 
-    project.tasks.forEach((task) => {
+  project.tasks.forEach((task) => {
     const container = document.createElement("div");
     const title = document.createElement("h1");
     const description = document.createElement("div");

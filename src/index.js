@@ -26,6 +26,7 @@ document
   .addEventListener("click", () => displayTasks(inboxProject));
 
 displayTasks(inboxProject);
-getCustomProjects().forEach((project)=>displayProject(project.name));
+projectList.addProject("hello");
+getCustomProjects().forEach((project) => displayProject(project.name));
 
 export { projectList };
