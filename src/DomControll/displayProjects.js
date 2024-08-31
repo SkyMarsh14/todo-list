@@ -54,6 +54,5 @@ export function displayProject(project) {
   deleteProjectBtn.addEventListener("click",()=>{
     projectList.removeProject(project);
     btnContainer.remove();
-
 })
 }
