@@ -2,9 +2,11 @@ import { projectList } from "..";
 import displayTasks from "./displayTasks";
 import editSvg from "../icon/pen-square-svgrepo-com.svg";
 import trashcanSvg from "../icon/trashcan.svg";
+import { loadLocalProject } from "../localStorage";
 
 export function getCustomProjects() {
   const projects = [];
+  Object.assign(projectList,loadLocalProject());
   Object.keys(projectList).forEach((key) => {
     projects.push(projectList[key]);
   });
@@ -47,8 +49,9 @@ export function displayProject(project) {
   addTaskBtn.append(noteIcon);
   deleteProjectBtn.append(trashcanIcon);
 
-  projectBtn.addEventListener("click", () =>
-    displayTasks(projectList[project])
+  projectBtn.addEventListener("click", () =>{
+    displayTasks(projectList[project]);
+  }
   );
   
   deleteProjectBtn.addEventListener("click",()=>{

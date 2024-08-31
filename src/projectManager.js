@@ -1,4 +1,5 @@
 import { projectList } from "./index";
+import {saveLocal} from "./localStorage"
 class Project {
   constructor(name) {
     this.name = name;
@@ -14,6 +15,7 @@ class Project {
     task.completion = false;
 
     this.tasks.push(task);
+    localStorage.setItem('localProjectList',JSON.stringify(projectList));
   }
   printTask() {
     this.tasks.forEach((task, index) => {
@@ -34,11 +36,13 @@ class ProjectList {
 
     const project = new Project(projectName);
     projectList[projectName] = project;
+    saveLocal();
     return true;
   }
 
   removeProject(projectName) {
     delete projectList[projectName];
+    saveLocal();
   }
 
   renameProject(oldProjectName) {
